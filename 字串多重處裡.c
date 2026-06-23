@@ -17,10 +17,6 @@ char *copy(const char *s, size_t n)
     /* 多配置一格放 '\0' */
     char *p = malloc(n + 1);
 
-    /* 檢查記憶體配置是否成功 */
-    if (p == NULL)
-        exit(1);
-
     /* 複製 n 個字元 */
     memcpy(p, s, n);
 
@@ -34,9 +30,6 @@ char *copy(const char *s, size_t n)
 Node *newnode(const char *s, size_t n)
 {
     Node *p = malloc(sizeof(Node));
-
-    if (p == NULL)
-        exit(1);
 
     /* 複製單詞到節點中 */
     p->word = copy(s, n);
